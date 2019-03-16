@@ -1,9 +1,10 @@
 # torgetter
-Concurrent HTTP requests over a pool of replaceable Tor proxies
+**Concurrent HTTP requests over a pool of replaceable Tor proxies**
 
-Dependencies: requests[socks], selenium, pysocks, stem, tldextract
+Dependencies: `requests[socks]`, `selenium`, `pysocks`, `stem`, `tldextract`
 
 Usage: 
+
     import TorClientPool
     import TorGetter
     urls = ['http://en.wikipedia.org'] * 10
