@@ -13,9 +13,16 @@ The Tor network has over 2000 exit nodes, so this gives you quite a large pool o
 
 Obviously, the decision to use this software would be frowned upon by many in the Tor community and would be seen as "not what the network was intended for". So I'm releasing this for educational purposes only, and want people to be aware that you're probably going to get angry faces from Tor developers if you ask for support modifying the code here ;)
 
-Dependencies: `requests[socks]`, `selenium`, `pysocks`, `stem`, `tldextract`
+**Dependencies:**
+* `requests[socks]`
+* `selenium
+* `pysocks`
+* `stem`
+* `tldextract`
 
-Usage example: 
+**Usage example:**
+
+Using the `requests` library for plain HTTP requests:
 
     import TorClientPool
     import TorGetter
@@ -24,4 +31,11 @@ Usage example:
     getter = TorGetter.RequestsTorGetter(urls, pool)
     results = getter.fetchConcurrent(10)
     
+Using a collection of headless browsers with Selenium, when you need Javascript rendering, etc:
 
+    import TorClientPool
+    import TorGetter
+    urls = ['http://en.wikipedia.org'] * 10
+    pool = TorClientPool.TorClientPool(5)
+    getter = TorGetter.SeleniumTorGetter(urls, pool)
+    results = getter.fetchConcurrent(10)
