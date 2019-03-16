@@ -29,9 +29,6 @@ MAX_CIRCUIT_DIRTINESS = '1800'
 NUM_CLIENTS = 10
 DEFAULT_CIRCUIT_LENGTH = 3
 
-TEST_URLS = ['http://httpbin.org/ip' for i in range(20)]  #DEBUG
-
-
 class TorClient():
     """represents a running tor process with own socks/control port + a stem.Controller()"""
     
