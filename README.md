@@ -1,7 +1,7 @@
 # torgetter
 **Concurrent HTTP requests over a pool of replaceable Tor proxies**
 
-This creates a pool of N tor clients that run simultaneously, and can be used to make concurrent proxied requests from multiple IP addresses. This can be useful for bypassing IP-based rate limits, or for making large numbers of requests without being noticeable as coming from a single IP. Because the connections are over the Tor network, it is relatively slow, but if you aren't in a huge rush and need to make a large number of requests that appear to be coming from hundreds of different IP addresses, this might work for you ...
+This creates a pool of tor clients that run simultaneously on a single host, and can be used to make concurrent proxied HTTP requests from multiple IP addresses (each using a different exit node). This can be useful for bypassing IP-based rate limits, for making large numbers of requests without being noticeable as coming from a single IP, and for having access to a pool of proxies in a specific country. Because the connections are over the Tor network, it is relatively slow, but if you aren't in a huge rush and need to make a large number of requests that appear to be coming from hundreds of different IP addresses, this might work for you ...
 
 It abuses the Tor protocol in several ways, namely:
 
@@ -15,7 +15,7 @@ Obviously, the decision to use this software would be frowned upon by many in th
 
 **Dependencies:**
 * `requests[socks]`
-* `selenium
+* `selenium`
 * `pysocks`
 * `stem`
 * `tldextract`
